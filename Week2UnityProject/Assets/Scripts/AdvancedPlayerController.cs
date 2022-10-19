@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AdvancedPlayerController : MonoBehaviour
 {
+    Animator anim;
     // Code for movement
     public CharacterController controller;
     public Transform cam;
@@ -26,6 +27,7 @@ public class AdvancedPlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,44 @@ public class AdvancedPlayerController : MonoBehaviour
         PlayerMover();
         ApplyGravity();
         ProcessJumping();
+        PlayerAnimator();
+    }
+
+    void PlayerAnimator()
+    {
+
+        //walk
+        if(Input.GetKey("w"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        if (Input.GetKey("a"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else if (Input.GetKey("s"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else if (Input.GetKey("d"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
+        
+
+        //run
+        if (Input.GetKey("w") && Input.GetKey("left shift"))
+        {
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+        }
     }
 
     void PlayerMover()
