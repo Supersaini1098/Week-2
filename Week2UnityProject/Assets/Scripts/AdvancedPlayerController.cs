@@ -47,7 +47,7 @@ public class AdvancedPlayerController : MonoBehaviour
         {
             anim.SetBool("Walk", true);
         }
-        if (Input.GetKey("a"))
+        else if (Input.GetKey("a"))
         {
             anim.SetBool("Walk", true);
         }
@@ -70,10 +70,24 @@ public class AdvancedPlayerController : MonoBehaviour
         {
             anim.SetBool("Run", true);
         }
+        else if (Input.GetKey("a") && Input.GetKey("left shift"))
+        {
+            anim.SetBool("Run", true);
+        }
+        else if (Input.GetKey("s") && Input.GetKey("left shift"))
+        {
+            anim.SetBool("Run", true);
+        }
+        else if (Input.GetKey("d") && Input.GetKey("left shift"))
+        {
+            anim.SetBool("Run", true);
+        }
         else
         {
             anim.SetBool("Run", false);
         }
+
+  
     }
 
     void PlayerMover()
@@ -81,6 +95,15 @@ public class AdvancedPlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if(Input.GetKey("left shift"))
+        {
+            speed = 12f;
+        }
+        else
+        {
+            speed = 6f;
+        }
 
         if (direction.magnitude >= 0.1f)
         {
