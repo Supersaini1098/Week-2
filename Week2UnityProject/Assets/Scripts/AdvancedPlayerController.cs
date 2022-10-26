@@ -41,30 +41,6 @@ public class AdvancedPlayerController : MonoBehaviour
 
     void PlayerAnimator()
     {
-
-        //walk
-        if(Input.GetKey("w"))
-        {
-            anim.SetBool("Walk", true);
-        }
-        else if (Input.GetKey("a"))
-        {
-            anim.SetBool("Walk", true);
-        }
-        else if (Input.GetKey("s"))
-        {
-            anim.SetBool("Walk", true);
-        }
-        else if (Input.GetKey("d"))
-        {
-            anim.SetBool("Walk", true);
-        }
-        else
-        {
-            anim.SetBool("Walk", false);
-        }
-        
-
         //run
         if (Input.GetKey("w") && Input.GetKey("left shift"))
         {
@@ -87,6 +63,27 @@ public class AdvancedPlayerController : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
+        //walk
+        if (Input.GetKey("w"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else if (Input.GetKey("a"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else if (Input.GetKey("s"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else if (Input.GetKey("d"))
+        {
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+        }
   
     }
 
