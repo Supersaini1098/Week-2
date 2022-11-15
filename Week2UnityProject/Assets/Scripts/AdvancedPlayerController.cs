@@ -9,7 +9,7 @@ public class AdvancedPlayerController : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 6f;
+    public float speed = 2f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -95,11 +95,11 @@ public class AdvancedPlayerController : MonoBehaviour
 
         if(Input.GetKey("left shift"))
         {
-            speed = 12f;
+            speed = 6f;
         }
         else
         {
-            speed = 6f;
+            speed = 2f;
         }
 
         if (direction.magnitude >= 0.1f)
